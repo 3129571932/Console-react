@@ -36,3 +36,59 @@
     transform: rotate(360deg);
   }
 }
+
+.middleBar {
+  width: 1080px;
+  height: 500px;
+  margin: 100px auto;
+}
+
+.commentPostArea {
+  width: 100%;
+  height: 75px;
+}
+
+.commentShowArea {
+  width: 100%;
+  height: 405px;
+  margin-top: 20px;
+  border: 1px solid black;
+}
+
+.userImgIcon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid gray;
+  float: left;
+  position: relative;
+  top: 20px;
+  margin-left: 30px;
+  background: url("../public/logo192.png") no-repeat;
+  background-size: cover;
+}
+
+.commentPostInput {
+  height: 30px;
+  width: 250px;
+  border-radius: 5px;
+  border: solid 1px gray;
+  float: left;
+  position: relative;
+  top: 20px;
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+.commentPostBtn {
+  float: left;
+  position: relative;
+  top: 20px;
+  margin-left: 10px;
+  height: 34px;
+  width: 75px;
+  color: black;
+  border: 1px solid gray;
+  border-radius: 5px;
+  cursor: pointer;
+}
