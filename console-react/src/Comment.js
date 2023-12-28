@@ -44,11 +44,14 @@ function Comment() {
             </div>
             <div className={'commentShowArea'}>
                 {
-                    list.map(item =>{
+                    list.map(item =>(
                         <div key={item.id} className={'commentList'}>
-
+                            <span>{item.name}</span>
+                            <span>{item.comment}</span>
+                            <span>{item.date}</span>
+                            <span>{item.agreeNum}</span>
                         </div>
-                    })
+                    ))
                 }
             </div>
         </div>
