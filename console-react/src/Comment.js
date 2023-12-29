@@ -16,6 +16,17 @@ function Comment() {
         {id : 2, name : 'cz', comment : '3 or 4', date : "2012-12-12", agreeNum : 444}
     ]
 
+    const typeList = [
+        {typeName: '最新', typeValue : 1},
+        {typeName: '最热', typeValue : 2}
+    ]
+
+    const handleDeleteComment = (id) => {
+        setCommonList(list.filter(item => {
+            return item.id !== id
+        }))
+    }
+
     let tmpComment = '';
 
     const[list, setCommonList] = useState(commonList);
@@ -41,15 +52,24 @@ function Comment() {
                 <div className={'userImgIcon'}/>
                 <input className={'commentPostInput'} onChange={setTmpComment} type={"text"} />
                 <input className={'commentPostBtn'} onClick={postCommon} type={"button"} value={'发布'}/>
+                <div className={'operationList'}>
+                    {
+                        typeList.map(item => (
+                            <span key={item.typeValue} id={item.typeValue}>{item.typeName}</span>
+                        ))
+                    }
+                </div>
             </div>
             <div className={'commentShowArea'}>
                 {
                     list.map(item =>(
                         <div key={item.id} className={'commentList'}>
-                            <span>{item.name}</span>
-                            <span>{item.comment}</span>
-                            <span>{item.date}</span>
-                            <span>{item.agreeNum}</span>
+                            <div className={'otherImageIcon'}></div>
+                            <span className={'otherCommentUser'}>{item.name}</span>
+                            <span className={'otherCommentContent'}>{item.comment}</span>
+                            <span className={'otherCommentDate'}>{item.date}</span>
+                            <span className={'otherCommentAgreeNum'}>{item.agreeNum}</span>
+                            {item.id == user.id && <a onClick={() => handleDeleteComment(item.id)} className={'deleteComment'}>删除</a>}
                         </div>
                     ))
                 }
